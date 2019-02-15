@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" charset="utf-8"/>
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/admin.css"/>
+</head>
+<body>
+<div class="body">
+    <!--导航栏-->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <i class="fa fa-cog fa-spin fa-lg fa-inverse"></i> &nbsp;
+        <a class="navbar-brand" href="news.html">中审后台管理</a>
+        <!--左侧标志-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <右侧栏目>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">用户角色</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="php/logout.php" id="navbardrop" data-toggle="dropdown">
+                            退出登录
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">更多</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <!--左侧栏目-->
+            <div class="col-lg-2 col-md-2" id="con-left" align="center">
+                <div class="panel-heading panel">
+                    <a href="news.html" class="btn btn-outline-info">新闻管理</a>
+                    <div class="item-body">
+                        <ul class="list-unstyled">
+                            <li class="item-second"><a href="news.html">新闻上传</a></li>
+                            <li class="item-second"><a href="news-m.html">新闻更新</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-heading panel">
+                    <a href="uploadfile.html" class="btn btn-info">文件管理</a>
+                    <div class="item-body">
+                        <ul class="list-unstyled">
+                            <li class="item-second"><a href="uploadfile.html">文件上传</a></li>
+                            <li class="item-second"><a href="file-m.html">文件更新</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr/>
+                <p>
+                    <a href="count-m.html" class="btn btn-outline-info">账号管理</a>
+                </p>
+            </div>
+            <!--左侧栏目结束-->
+
+            <div id="con-right" class="col-lg-10 col-md-10">
+                <!--文件上传-->
+                <form id="form1" enctype="multipart/form-data" method="post" action="upload.php">
+                    <div class="row">
+                        <label for="fileToUpload">选择需要上传的文件</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+                    </div>
+                    <div id="fileName"></div>
+                    <div id="fileSize"></div>
+                    <div id="fileType"></div>
+                    <div class="row">
+                        <input type="button" onclick="uploadFile()" value="上传"/>
+                    </div>
+                    <div id="progressNumber"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <div class="foot">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+            <ul class="navbar-nav">
+						<span class="navbar-text">
+							<i class="fa fa-chrome fa-spin fa-lg" aria-hidden="true"></i>&nbsp;
+						</span>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">News Release System</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!--JS引入部分-->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/wangEditor.min.js"></script>
+<script src="js/admin.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/uploadfile.js"></script>
+
+</body>
+</html>
